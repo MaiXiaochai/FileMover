@@ -1,10 +1,10 @@
 # FileMover
-移动符合条件的文件到新目录，并保持部分原文件的目录结构。
+移动符合条件的文件到新目录，并保持原文件的目录结构。
 
 ##### 1. 使用说明
-- 修改`config.toml`中path下的src_dir和dest_dir
+- 修改`config.toml`中`path`下的`src_dir`和`dest_dir`
 - 运行程序：`go run main.go`
-- 程序会将src_dir下的目录和文件移动到dest_dir目录下，并保持基于src_dir的路径相对结构
+- 程序会将`src_dir`下的目录和文件移动到`dest_dir`目录下，并保持原来基于`src_dir`的路径相对结构
     - 如：
     ```
     src_dir
