@@ -35,7 +35,7 @@ func MoveFiles(srcDir, destDir string, conditionFunc func(os.FileInfo) bool) err
 			if err = moveFile(path, newPath); err == nil {
 				movedCount++
 				if remainder := movedCount % 100; remainder == 0 && movedCount != 0 {
-					fmt.Printf("[ %d/%d: %.1f%% ][ %s ]", movedCount, pathCount, float64(movedCount)/float64(pathCount)*100, filepath.Base(path))
+					fmt.Printf("[ %d/%d: %.1f%% ][ %s ]\n", movedCount, pathCount, float64(movedCount)/float64(pathCount)*100, filepath.Base(path))
 				}
 			}
 			return err
@@ -67,6 +67,11 @@ func moveFile(src, dest string) error {
 	if err != nil {
 		return err
 	}
+
+	// 显式地关闭文件，而非延迟关闭
+	// 这里先关闭output，因为它是新创建的文件，需要确保所有数据都写入
+	output.Close()
+	input.Close()
 	err = os.Remove(src)
 	if err != nil {
 		return err
