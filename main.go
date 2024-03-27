@@ -2,11 +2,10 @@ package main
 
 import (
 	"file_mover/pkg/mover"
+	"file_mover/pkg/utils"
 	"log"
 	"os"
 	"time"
-
-	"file_mover/pkg/utils"
 )
 
 // 定义条件函数的类型
