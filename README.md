@@ -12,11 +12,10 @@
      |- b_dir
         |- b.txt
     ```
-    移动到dest_dir后
+    移动到`dest_dir`后
     ```
     dest_dir
      |- a.txt
      |- b_dir
         |- b.txt
     ```
----
